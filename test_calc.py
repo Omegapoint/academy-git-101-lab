@@ -22,6 +22,22 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(calc.multiply([1]), 1)
         self.assertEqual(calc.multiply([99]), 99)
 
+    def test_divide_numbers(self):
+        self.assertEqual(calc.divide([4, 2]), 2.0)
+        self.assertEqual(calc.divide([9, 3]), 3.0)
+
+    def test_division_by_zero(self):
+        with self.assertRaises(ValueError):
+            calc.divide([4, 0])
+
+    def test_divide_with_one_number(self):
+        with self.assertRaises(ValueError):
+            calc.divide([4])
+
+    def test_divide_with_three_numbers(self):
+        with self.assertRaises(ValueError):
+            calc.divide([4, 2, 1])
+
 
 if __name__ == '__main__':
     unittest.main()
