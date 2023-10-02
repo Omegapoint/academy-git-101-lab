@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+import unittest
+import calc
+
+
+class TestCalc(unittest.TestCase):
+
+    def test_add_numbers(self):
+        self.assertEqual(calc.add([1, 1]), 2)
+        self.assertEqual(calc.add([1, 2, 3, 4]), 10)
+    
+    def test_add_one_number(self):
+        self.assertEqual(calc.add([1]), 1)
+        self.assertEqual(calc.add([99]), 99)
+
+    def test_multiply_numbers(self):
+        self.assertEqual(calc.multiply([2, 2]), 4)
+        self.assertEqual(calc.multiply([1, 2, 3, 4]), 24)
+    
+    def test_multiply_one_number(self):
+        self.assertEqual(calc.multiply([1]), 1)
+        self.assertEqual(calc.multiply([99]), 99)
+
+
+if __name__ == '__main__':
+    unittest.main()
