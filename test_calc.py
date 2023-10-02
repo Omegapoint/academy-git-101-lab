@@ -37,6 +37,14 @@ class TestCalc(unittest.TestCase):
     def test_divide_with_three_numbers(self):
         with self.assertRaises(ValueError):
             calc.divide([4, 2, 1])
+    
+    def test_subtract_numbers(self):
+        self.assertEqual(calc.subtract([4, 2]), 2)
+        self.assertEqual(calc.subtract([10, 2, 3]), 5)
+    
+    def test_subtract_one_number(self):
+        self.assertEqual(calc.subtract([1]), 1)
+        self.assertEqual(calc.subtract([99]), 99)
 
 
 if __name__ == '__main__':
