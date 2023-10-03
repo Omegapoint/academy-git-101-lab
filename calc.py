@@ -32,6 +32,10 @@ def subtract(numbers):
     return result
 
 
+def expo(numbers):
+    return 0
+
+
 def main():
 
     parser = argparse.ArgumentParser(description="A simple calculator with add and multiply commands.")    

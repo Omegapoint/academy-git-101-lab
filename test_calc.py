@@ -46,6 +46,24 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(calc.subtract([1]), 1)
         self.assertEqual(calc.subtract([99]), 99)
 
+    def test_exponentiate_numbers(self):
+        self.assertEqual(calc.expo([2, 2]), 4)
+        self.assertEqual(calc.expo([3, 3]), 27)
+
+    def test_exponentiate_non_integer(self):
+        self.assertEqual(calc.expo([4, 0.5]), 2)
+
+    def test_exponentiate_negative_number(self):
+        self.assertEqual(calc.expo([2, -3]), 0.125)
+
+    def test_exponentiate_with_one_number(self):
+        with self.assertRaises(ValueError):
+            calc.expo([2])
+
+    def test_exponentiate_with_three_numbers(self):
+        with self.assertRaises(ValueError):
+            calc.expo([2, 3, 4])
+
 
 if __name__ == '__main__':
     unittest.main()
