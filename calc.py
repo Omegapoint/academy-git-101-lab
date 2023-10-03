@@ -56,8 +56,7 @@ def main():
 
     args = parser.parse_args()
     if hasattr(args, 'func'):
-        result = args.func(args.numbers)
-        print(result)
+        print(args.func(args.numbers))
     else:
         parser.print_help()
 
