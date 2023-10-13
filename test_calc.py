@@ -46,6 +46,9 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(calc.subtract([1]), 1)
         self.assertEqual(calc.subtract([99]), 99)
 
+    def test_calc_square_root(self):
+        self.assertEqual(calc.sqrt([4]), 2)
+        self.assertEqual(calc.sqrt([8]), 2.8284271247461903)
 
 if __name__ == '__main__':
     unittest.main()

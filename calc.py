@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
+import math
 
 
 def add(numbers):
@@ -32,6 +33,10 @@ def subtract(numbers):
     return result
 
 
+def sqrt(numbers):
+    return math.sqrt(numbers[0])
+
+
 def main():
 
     parser = argparse.ArgumentParser(description="A simple calculator with add and multiply commands.")    
@@ -53,6 +58,10 @@ def main():
     subtract_parser = subparsers.add_parser('subtract', help='Subtracts the provided numbers from the first number.')
     subtract_parser.add_argument('numbers', type=int, nargs='+', help='The numbers to subtract, starting from the first number.')
     subtract_parser.set_defaults(func=subtract)
+
+    divide_parser = subparsers.add_parser('sqrt', help='Calculates the square root of a number')
+    divide_parser.add_argument('numbers', type=float, nargs=1, help='The numbers calculate square root of.')
+    divide_parser.set_defaults(func=sqrt)
 
     args = parser.parse_args()
     if hasattr(args, 'func'):
