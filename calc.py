@@ -31,6 +31,8 @@ def main():
 
     subparsers = parser.add_subparsers()
 
+    parser.add_argument('-d', '--debug', action='store_true', help='Run in debug mode')
+
     add_parser = subparsers.add_parser('add', help='Adds the provided numbers.')
     add_parser.add_argument('numbers', type=int, nargs='+', help='The numbers to add.')
     add_parser.set_defaults(func=add)
