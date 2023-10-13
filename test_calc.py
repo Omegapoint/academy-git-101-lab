@@ -38,6 +38,10 @@ class TestCalc(unittest.TestCase):
         with self.assertRaises(ValueError):
             calc.divide([4, 2, 1])
 
+    def test_square_number(self):
+        self.assertEqual(calc.square([2]), 4.0)
+        self.assertEqual(calc.square([4]), 16.0)
+
 
 if __name__ == '__main__':
     unittest.main()
