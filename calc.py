@@ -47,6 +47,8 @@ def main():
 
     args = parser.parse_args()
     if hasattr(args, 'func'):
+        if args.debug:
+            print(f'[DEBUG] Will execute: {args.func}')
         result = args.func(args.numbers)
         print(result)
     else:
