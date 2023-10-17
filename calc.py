@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
+import math
 
 
 def add(numbers):
@@ -8,10 +9,7 @@ def add(numbers):
 
 
 def multiply(numbers):
-    result = 1
-    for n in numbers:
-        result *= n
-    return result
+    return reduce(operator.mul, numbers, 1)
 
 
 def divide(numbers):
@@ -24,12 +22,23 @@ def divide(numbers):
 
     return numbers[0] / numbers[1]
 
-
+# this is a comment
 def subtract(numbers):
     result = numbers[0]
     for n in numbers[1:]:
         result -= n
     return result
+
+def square(numbers):
+    return numbers[0]**2
+
+
+def sqrt(numbers):
+    return math.sqrt(numbers[0])
+
+
+def expo(numbers):
+    return 0
 
 
 def main():
@@ -37,6 +46,8 @@ def main():
     parser = argparse.ArgumentParser(description="A simple calculator with add and multiply commands.")    
 
     subparsers = parser.add_subparsers()
+
+    parser.add_argument('-d', '--debug', action='store_true', help='Run in debug mode')
 
     add_parser = subparsers.add_parser('add', help='Adds the provided numbers.')
     add_parser.add_argument('numbers', type=int, nargs='+', help='The numbers to add.')
@@ -54,12 +65,35 @@ def main():
     subtract_parser.add_argument('numbers', type=int, nargs='+', help='The numbers to subtract, starting from the first number.')
     subtract_parser.set_defaults(func=subtract)
 
+    square_parser = subparsers.add_parser('square', help='Squares the given number')
+    square_parser.add_argument('numbers', type=float, nargs=1, help='The number to square.')
+    square_parser.set_defaults(func=square)
+
+    divide_parser = subparsers.add_parser('sqrt', help='Calculates the square root of a number')
+    divide_parser.add_argument('numbers', type=float, nargs=1, help='The numbers calculate square root of.')
+    divide_parser.set_defaults(func=sqrt)
+
     args = parser.parse_args()
     if hasattr(args, 'func'):
-        print(args.func(args.numbers))
+        if args.debug:
+            print(f'[DEBUG] Will execute: {args.func}')
+        result = args.func(args.numbers)
+        print(result)
     else:
         parser.print_help()
 
 
 if __name__ == '__main__':
     main()
+# en liten kommentar
+# comment
+# comment 2
+# hej hej
+#comment
+#comment
+# comment1
+#hello
+# comment
+# comment by sofia
+# comment1
+# another comment
