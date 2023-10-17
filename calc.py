@@ -8,10 +8,7 @@ def add(numbers):
 
 
 def multiply(numbers):
-    result = 1
-    for n in numbers:
-        result *= n
-    return result
+    return reduce(operator.mul, numbers, 1)
 
 
 def divide(numbers):
