@@ -24,7 +24,7 @@ def divide(numbers):
 
     return numbers[0] / numbers[1]
 
-
+# this is a comment
 def subtract(numbers):
     result = numbers[0]
     for n in numbers[1:]:
