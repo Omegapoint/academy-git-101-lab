@@ -47,9 +47,9 @@ def main():
     divide_parser.add_argument('numbers', type=float, nargs=2, help='The numbers to divide, given as two numbers where the first is divided by the second.')
     divide_parser.set_defaults(func=divide)
 
-    divide_parser = subparsers.add_parser('square', help='Squares the given number')
-    divide_parser.add_argument('numbers', type=float, nargs=1, help='The number to square.')
-    divide_parser.set_defaults(func=square)
+    square_parser = subparsers.add_parser('square', help='Squares the given number')
+    square_parser.add_argument('numbers', type=float, nargs=1, help='The number to square.')
+    square_parser.set_defaults(func=square)
 
     args = parser.parse_args()
     if hasattr(args, 'func'):
