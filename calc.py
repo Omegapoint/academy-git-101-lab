@@ -34,8 +34,8 @@ def subtract(numbers):
 
 def main():
 
-    parser = argparse.ArgumentParser(description="A simple calculator with add and multiply commands.")
-	parser.add_argument('-d', '--debug', action='store_true', help='Run in debug mode')
+    parser = argparse.ArgumentParser(description="A simple calculator with add and multiply commands.")    
+
     subparsers = parser.add_subparsers()
 
     add_parser = subparsers.add_parser('add', help='Adds the provided numbers.')
