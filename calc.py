@@ -73,3 +73,5 @@ if __name__ == '__main__':
 #comment
 # comment
 # här kan jag skriva vad jag vill
+# Hej alla barn nu var det barnprogram, titta nu vad farbror Frej tar fram
+
