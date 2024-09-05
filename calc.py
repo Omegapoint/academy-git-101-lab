@@ -64,3 +64,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+# MENINGEN MED LIVET ÄR 42
