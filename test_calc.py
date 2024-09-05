@@ -41,6 +41,7 @@ class TestCalc(unittest.TestCase):
     def test_subtract_numbers(self):
         self.assertEqual(calc.subtract([4, 2]), 2)
         self.assertEqual(calc.subtract([10, 2, 3]), 5)
+        self.assertEqual(calc.subtract[-7, -2], -5)
     
     def test_subtract_one_number(self):
         self.assertEqual(calc.subtract([1]), 1)
