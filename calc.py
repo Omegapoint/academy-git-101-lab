@@ -73,3 +73,6 @@ if __name__ == '__main__':
 #comment
 # comment
 # comment
+#bruh
+#döskalle
+
