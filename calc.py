@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
-
+#heja bajen
 
 def add(numbers):
     return sum(numbers)
