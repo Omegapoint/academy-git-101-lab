@@ -46,6 +46,17 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(calc.subtract([1]), 1)
         self.assertEqual(calc.subtract([99]), 99)
 
+    def test_power_numbers(self):
+        self.assertEqual(calc.power([2, 3]), 8)
+        self.assertEqual(calc.power([2, 3, 2]), 64)
+
+    def test_power_one_number(self):
+        self.assertEqual(calc.power([5]), 5)
+        self.assertEqual(calc.power([99]), 99)
+
+    def test_power_empty_list(self):
+        with self.assertRaises(ValueError):
+            calc.power([])
 
 if __name__ == '__main__':
     unittest.main()
